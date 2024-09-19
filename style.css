@@ -53,12 +53,26 @@ header p {
 nav {
     background-color: rgba(0, 0, 0, 0.8);
     padding: 15px 0;
+    text-align: center;
     position: sticky;
     top: 0;
     z-index: 1000;
     width: 100%;
 }
 
+/* Mobile Menu Icon */
+.menu-icon {
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    z-index: 1001;
+    font-size: 30px; /* Icon size */
+    color: white;
+}
+
+/* Hide the menu by default */
 nav ul {
     list-style-type: none;
     margin: 0;
@@ -68,6 +82,11 @@ nav ul {
     align-items: center;
 }
 
+nav ul.active {
+    display: flex; /* Show menu when active */
+}
+
+/* Menu links */
 nav ul li {
     margin: 10px 0;
 }
@@ -84,42 +103,6 @@ nav ul li a:hover {
     color: #004d40;
     background-color: #00e676;
     border-radius: 5px;
-}
-
-/* Hamburger Menu Icon */
-.hamburger {
-    display: block;
-    cursor: pointer;
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    z-index: 1001;
-}
-
-.hamburger div {
-    width: 30px;
-    height: 3px;
-    background-color: white;
-    margin: 6px 0;
-    transition: 0.4s;
-}
-
-/* Change Hamburger Icon to "X" when active */
-.hamburger.active div:nth-child(1) {
-    transform: rotate(-45deg) translate(-6px, 6px);
-}
-
-.hamburger.active div:nth-child(2) {
-    opacity: 0;
-}
-
-.hamburger.active div:nth-child(3) {
-    transform: rotate(45deg) translate(-6px, -6px);
-}
-
-/* Show Navigation Menu on Click */
-nav ul.active {
-    display: flex;
 }
 
 /* Parallax Background */
@@ -234,8 +217,8 @@ footer {
 
 /* Media Queries for Larger Screens */
 @media (min-width: 768px) {
-    .hamburger {
-        display: none; /* Hide hamburger on larger screens */
+    .menu-icon {
+        display: none; /* Hide menu icon on larger screens */
     }
 
     nav ul {
